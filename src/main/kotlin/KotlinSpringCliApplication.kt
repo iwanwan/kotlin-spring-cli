@@ -1,5 +1,5 @@
+import org.springframework.boot.Banner
 import org.springframework.boot.CommandLineRunner
-import org.springframework.boot.SpringApplication
 import org.springframework.boot.SpringBootConfiguration
 import org.springframework.boot.builder.SpringApplicationBuilder
 
@@ -14,7 +14,9 @@ class KotlinSpringCliApplication : CommandLineRunner {
   companion object {
     @JvmStatic
     fun main(args: Array<String>) {
-      SpringApplication.run(KotlinSpringCliApplication::class.java, *args)
+      SpringApplicationBuilder(KotlinSpringCliApplication::class.java)
+              .bannerMode(Banner.Mode.OFF)
+              .run(*args)
     }
   }
 }
